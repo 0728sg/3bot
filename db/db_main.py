@@ -10,9 +10,12 @@ async def sql_create():
         print("Data base is connected")
 
         cursor.execute(queries.CREATE_TABLE_PRODUCTS)
+        cursor.execute(queries.CREATE_TABLE_PRODUCTS_DETAILS)
         db.commit()
 
-    async def sql_insert_products(name_product, size, price, product_id, photo):
+async def sql_insert_products(name_product, size, price, product_id, photo):
+    with sqlite3.connect('db/store.sqlite') as db_with:
+        cursor = db.cursor()
         cursor.execute(queries.INSERT_PRODUCTS_QUERY, (
             name_product,
             size,
@@ -20,4 +23,13 @@ async def sql_create():
             product_id,
             photo
         ))
-        db.commit()
+        db_with.commit()
+async def sql_insert_products_details(product_id, category, info_product):
+    with sqlite3.connect('db/store.sqlite') as db_with:
+        cursor = db.cursor()
+        cursor.execute(queries.INSERT_PRODUCTS_QUERY_DETAILS, (
+            product_id,
+            category,
+            info_product
+        ))
+        db_with.commit()
