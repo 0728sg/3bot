@@ -2,7 +2,7 @@ import logging
 from aiogram.utils import executor
 from buttons import start_test
 from config import bot, dp, admin
-from handlers import commands, echo, quiz, FSM_reg, FSM_store, webapp, admin_group, send_products
+from handlers import commands, echo, quiz, FSM_reg, FSM_store, webapp, admin_group, send_products, send_delete_product
 from db import db_main
 
 
