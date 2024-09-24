@@ -18,7 +18,7 @@ INSERT_PRODUCTS_QUERY = """
 CREATE_TABLE_PRODUCTS_DETAILS = """
     CREATE TABLE IF NOT EXISTS products_details (
     id INTEGER PRIMARY KEY AUTOINCREMENT, 
-    product id VARCHAR(255),
+    product_id VARCHAR(255),
     category VARCHAR(255),
     info product VARCHAR(255)
     )

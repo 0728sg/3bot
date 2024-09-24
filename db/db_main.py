@@ -1,7 +1,7 @@
 import sqlite3
 from db import queries
 
-db= sqlite3.connect('db/store.sqlite')
+db= sqlite3.connect('db/store.sqlite3.1')
 cursor = db.cursor()
 
 
