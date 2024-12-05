@@ -2,14 +2,15 @@ import logging
 from aiogram.utils import executor
 from buttons import start_test
 from config import bot, dp, admin
-from handlers import commands, echo, quiz, FSM_reg, FSM_store, webapp, admin_group, send_products, send_delete_product, update_products
 from db import db_main
+from handlers import commands, echo, quiz, FSM_reg, FSM_store, webapp, admin_group, send_products, send_delete_product, update_products
+
 
 
 async def on_startup(_):
-    for i in admin:
-        await bot.send_message(chat_id=i, text="Бот включен!",
-                               reply_markup=start_test)
+    # for i in admin:
+    #     await bot.send_message(chat_id=i, text="Бот включен!",
+    #                            reply_markup=start_test)
         await db_main.sql_create()
 
 
